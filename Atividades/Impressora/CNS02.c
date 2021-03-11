@@ -6,6 +6,7 @@
 int main()
 {
     int qpag, qh, qm, qs, totmin; //qpag (paginas totais), qh(horas), qm(minutos), totmin(segundos totais)
+    printf("==============================================================\n");
     printf("Quantas paginas que pretende imprimir:");
     scanf("%d", &qpag);
     totmin = qpag / 5;
@@ -17,5 +18,6 @@ int main()
     qs = (((qpag * 12) - (qm *60)) - ((qh * 60) * 60)); //Calcula segundos
 
     printf("faltam %d horas %d minutos e %d segundos para o fim da impressao\n",qh,qm,qs);
+     printf("==============================================================\n");
     system("pause");
 }
