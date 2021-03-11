@@ -7,7 +7,7 @@ int main()
 {
     int qpag, qh, qm, qs, totmin; //qpag (paginas totais), qh(horas), qm(minutos), totmin(segundos totais)
     printf("==============================================================\n");
-    printf("Quantas paginas que pretende imprimir:");
+    printf("Quantidade de paginas que pretende imprimir:");
     scanf("%d", &qpag);
     totmin = qpag / 5;
     qm = totmin;
