@@ -1,4 +1,4 @@
-//CNS03 - Exp1 - Exercicio 3
+//CNS03 - Exp1 - Exercicio 4 (impressora)
 //Caio Sclavi 11/03/21
 //
 #include <stdio.h>
