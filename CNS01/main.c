@@ -3,6 +3,6 @@
 #include <stdio.h> //biblioteca de input/output padrão 
 int main()
 {
-    printf("Testando E printf\nOla professor\n");
+    printf("Testando printf\nOla professor\n");
     return 0;   
 }
