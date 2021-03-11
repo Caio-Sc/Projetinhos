@@ -11,6 +11,7 @@ int main()
     printf("Defina a segunda nota:");
     scanf("%f", &n2);
     media = (n1 + n2) / 2;
-    printf("Media Final: %.1f", media);
+    printf("Media Final: %.1f\n", media);
+    system("pause");
     return 0;
 }
