@@ -1,4 +1,4 @@
-//CNS02
+//CNS02 - Printf mesma linha
 //Caio Sclavi 11/03/21
 //
 #include <stdio.h>
