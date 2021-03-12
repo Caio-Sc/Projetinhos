@@ -1,0 +1,5 @@
+C:\Users\pudim\Desktop\Medidas.exe
+C:\Users\pudim\Desktop\Medidas.dll
+C:\Users\pudim\Desktop\Medidas.deps.json
+C:\Users\pudim\Desktop\Medidas.runtimeconfig.json
+C:\Users\pudim\Desktop\Medidas.pdb
