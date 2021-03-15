@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pudim\\source\\repos\\Medidass\\Medidas.csproj",
+      "projectUniqueName": "C:\\Users\\pudim\\Documents\\GitHub\\Atividades-PUC\\Aprendendo\\Forms\\Medidass\\Medidas.csproj",
       "projectName": "Medidas",
-      "projectPath": "C:\\Users\\pudim\\source\\repos\\Medidass\\Medidas.csproj",
+      "projectPath": "C:\\Users\\pudim\\Documents\\GitHub\\Atividades-PUC\\Aprendendo\\Forms\\Medidass\\Medidas.csproj",
       "packagesPath": "C:\\Users\\pudim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pudim\\source\\repos\\Medidass\\obj\\",
+      "outputPath": "C:\\Users\\pudim\\Documents\\GitHub\\Atividades-PUC\\Aprendendo\\Forms\\Medidass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -36,34 +36,34 @@ namespace Medias
         private void button1_Click(object sender, EventArgs e)
         {
                 double Media;
-                string stringValue = Prova1.Text.Replace(',', '.');
+                string stringValue = Prova1.Text.Replace('.', ',');
                 if (stringValue == "")
                 {
                     respostas.Text = "faltou a nota da P1";
                     return;
                 }
-                double P1 = double.Parse(stringValue, CultureInfo.InvariantCulture);
-                stringValue = Prova2.Text.Replace(',', '.');
+                float P1 = float.Parse(stringValue);
+                stringValue = Prova2.Text.Replace('.', ',');
                 if (stringValue == "")
                 {
                     respostas.Text = "faltou a nota da P2";
                     return;
                 }
-                double P2 = double.Parse(stringValue, CultureInfo.InvariantCulture);
-                stringValue = Atividade1.Text.Replace(',', '.');
+                float P2 = float.Parse(stringValue);
+                stringValue = Atividade1.Text.Replace('.', ',');
                 if (stringValue == "")
                 {
                     respostas.Text = "faltou a nota da A1";
                     return;
                 }
-                double A1 = double.Parse(stringValue, CultureInfo.InvariantCulture);
-                stringValue = Atividade2.Text.Replace(',', '.');
+                float A1 = float.Parse(stringValue);
+                stringValue = Atividade2.Text.Replace('.', ',');
                 if (stringValue == "")
                 {
                     respostas.Text = "faltou a nota da A2";
                     return;
                 }
-                double A2 = double.Parse(stringValue, CultureInfo.InvariantCulture);
+                float A2 = float.Parse(stringValue);
                 if (P1 > 10.0 || P2 > 10 || A1 > 10 || A2 > 10)
                 {
                     respostas.Text = "Os números não podem ser maiores que 10";
@@ -131,6 +131,20 @@ namespace Medias
             respostas.Text = "Esperando input";
             label5.Font = new Font("Gill Sans Ultra Bold", 25);
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(TopMost == true)
+            {
+                TopMost = false;
+            }
+            else
+            {
+                TopMost = true;
+            }
+            
+        }
     } 
 }
+
 

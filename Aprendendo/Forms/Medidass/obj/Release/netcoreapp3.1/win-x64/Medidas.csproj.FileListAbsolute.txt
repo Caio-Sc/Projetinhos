@@ -26,3 +26,17 @@ C:\Users\pudim\source\repos\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.c
 C:\Users\pudim\source\repos\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.dll
 C:\Users\pudim\source\repos\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.pdb
 C:\Users\pudim\source\repos\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.genruntimeconfig.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.exe
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.deps.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.runtimeconfig.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.runtimeconfig.dev.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.dll
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\bin\Release\netcoreapp3.1\win-x64\Medidas.pdb
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medias.Form1.resources
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.csproj.GenerateResource.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.AssemblyInfoInputs.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.AssemblyInfo.cs
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.csproj.CoreCompileInputs.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.dll
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.pdb
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Medidass\obj\Release\netcoreapp3.1\win-x64\Medidas.genruntimeconfig.cache

@@ -16,7 +16,6 @@ int main()
     qh = (totmin / 60) / 60; //Calcula as horas
     qm = qm - (qh * 60);
     qs = (((qpag * 12) - (qm * 60)) - ((qh * 60) * 60)); //Calcula segundos
-
     printf("faltam %d horas %d minutos e %d segundos para o fim da impressao\n", qh, qm, qs);
     printf("==============================================================\n");
     system("pause");

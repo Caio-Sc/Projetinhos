@@ -1,0 +1,5 @@
+C:\Users\pudim\Desktop\Ceaser.exe
+C:\Users\pudim\Desktop\Ceaser.dll
+C:\Users\pudim\Desktop\Ceaser.deps.json
+C:\Users\pudim\Desktop\Ceaser.runtimeconfig.json
+C:\Users\pudim\Desktop\Ceaser.pdb

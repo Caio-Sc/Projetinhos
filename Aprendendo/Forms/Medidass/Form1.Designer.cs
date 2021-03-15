@@ -45,6 +45,7 @@ namespace Medias
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // button1
@@ -111,20 +112,20 @@ namespace Medias
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 129);
+            this.label3.Location = new System.Drawing.Point(12, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 15);
+            this.label3.Size = new System.Drawing.Size(177, 15);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Soma das notas antes da P1";
+            this.label3.Text = "Soma das atividades antes da P1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(220, 129);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 15);
+            this.label4.Size = new System.Drawing.Size(177, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Soma das notas antes da P2";
+            this.label4.Text = "Soma das atividades antes da P2";
             // 
             // respostas
             // 
@@ -173,11 +174,23 @@ namespace Medias
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(284, 233);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(117, 19);
+            this.checkBox1.TabIndex = 13;
+            this.checkBox1.Text = "Sempre no Topo?";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(416, 309);
+            this.ClientSize = new System.Drawing.Size(413, 296);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -191,9 +204,10 @@ namespace Medias
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Prova1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "     ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -216,6 +230,7 @@ namespace Medias
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

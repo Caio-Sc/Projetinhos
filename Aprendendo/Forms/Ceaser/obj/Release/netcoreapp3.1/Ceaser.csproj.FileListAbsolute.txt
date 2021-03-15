@@ -1,0 +1,15 @@
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.exe
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.deps.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.runtimeconfig.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.runtimeconfig.dev.json
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.dll
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\bin\Release\netcoreapp3.1\Ceaser.pdb
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.csprojAssemblyReference.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.Form1.resources
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.csproj.GenerateResource.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.AssemblyInfoInputs.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.AssemblyInfo.cs
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.csproj.CoreCompileInputs.cache
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.dll
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.pdb
+C:\Users\pudim\Documents\GitHub\Atividades-PUC\Aprendendo\Forms\Ceaser\obj\Release\netcoreapp3.1\Ceaser.genruntimeconfig.cache
