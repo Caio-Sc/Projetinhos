@@ -38,6 +38,8 @@ namespace Ceaser
             this.resposta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +95,7 @@ namespace Ceaser
             // 
             this.button1.Location = new System.Drawing.Point(188, 43);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 107);
+            this.button1.Size = new System.Drawing.Size(171, 144);
             this.button1.TabIndex = 6;
             this.button1.Text = "Converter";
             this.button1.UseVisualStyleBackColor = true;
@@ -102,18 +104,40 @@ namespace Ceaser
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 135);
+            this.checkBox1.Location = new System.Drawing.Point(13, 143);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(112, 19);
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "Descriptografar?";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(13, 168);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(86, 19);
+            this.checkBox2.TabIndex = 8;
+            this.checkBox2.Text = "Brute Force";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(13, 193);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(97, 19);
+            this.checkBox3.TabIndex = 9;
+            this.checkBox3.Text = "Cifra normal?";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 162);
+            this.ClientSize = new System.Drawing.Size(371, 226);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.resposta);
@@ -142,6 +166,8 @@ namespace Ceaser
         private System.Windows.Forms.TextBox resposta;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

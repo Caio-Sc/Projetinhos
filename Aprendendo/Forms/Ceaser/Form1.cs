@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Ceaser
 {
@@ -20,9 +21,14 @@ namespace Ceaser
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<char> abc = new List<char> { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' }; // lista char
+            List<char> abc = new List<char> { ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' }; // lista char
+            if (checkBox3.Checked == true)
+            {
+            abc.Remove(abc[0]);
+            }
             string valor = coeficiente.Text.Replace(",", "");
             valor = valor.Replace(".", "");
+            string[] brute = new string[26];
             if (valor == "")
             {
                 resposta.Text = "Faltou coeficiente";
@@ -59,14 +65,34 @@ namespace Ceaser
                                 break;
                             }
 
+                            if (checkBox2.Checked == true)
+                            {
+                                for (int p = 0; p < 26; p++)
+                                {
+                                    if(codi[i] == abc[j])
+                                    {
+                                        if ((j - p) < 0)
+                                        {
+                                            respostaf = abc[(j - p) + lenght].ToString();
+                                            brute[p] += respostaf;
+                                        }
+                                        else if ((j - p) > 0)
+                                        {
+                                            respostaf = abc[j - p].ToString();
+                                            brute[p] += respostaf;
+                                        }
+                                    }
+                                }
 
-                            else if (j + k >= lenght)
+                            }
+
+                            else if (j + k >= lenght && checkBox2.Checked == false)
                             {
                                 j = ((j + k) - lenght);
                                 respostaf += abc[j];
                                 break;
                             }
-                            else if (j + k < lenght)
+                            else if (j + k < lenght && checkBox2.Checked == false)
                             {
                                 respostaf += abc[j + k];
                                 break;
@@ -74,6 +100,14 @@ namespace Ceaser
                         }
                     }
                     
+                }
+                if (checkBox2.Checked == true)
+                {
+                    System.IO.File.Delete(@"C:\Users\pudim\Desktop\Cesar-Brute.txt");
+                    for (int p = 0; p < 26; p++)
+                    {
+                    System.IO.File.AppendAllText(@"C:\Users\pudim\Desktop\Cesar-Brute.txt", brute[p] + Environment.NewLine + Environment.NewLine);
+                    }
                 }
                 resposta.Text = respostaf;
             }
