@@ -1,4 +1,4 @@
-//CNS12 - Calculadora aritimetica
+//CNS12 - Calculadora aritmética
 //Caio Sclavi 25/03/2021
 #include <stdio.h>
 
