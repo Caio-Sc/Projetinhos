@@ -16,6 +16,7 @@ int main()
         {
             printf("==================================================\n");
             printf("Coloque um valor de ano positivo e maior que zero\n");
+            printf("==================================================\n");
             system("pause");
             system("cls");
             continue;
@@ -26,6 +27,7 @@ int main()
         {
             printf("===============================================\n");
             printf("Coloque um valor maior que zero e menor que 12\n");
+            printf("===============================================\n");
             system("pause");
             system("cls");
             continue;
@@ -89,6 +91,7 @@ int main()
         {
             printf("===============================================\n");
             printf("Coloque um valor maior que zero e menor que %d\n", aux); 
+            printf("===============================================\n");
             system("pause");
             system("cls");
             continue;
