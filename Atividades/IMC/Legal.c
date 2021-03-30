@@ -5,7 +5,7 @@
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese"); 
+    setlocale(LC_ALL, "Portuguese");
     float peso, altura, IMC, pfalta;
     printf("Escreva sua altura em metros ou centímetros (usar , para metros): ");
     scanf("%f", &altura);
