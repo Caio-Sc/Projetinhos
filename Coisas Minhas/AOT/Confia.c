@@ -55,7 +55,7 @@ void main()
                 }
                 else if (Y == 'n' || Y == 'N')
                 {
-                    return 0;
+                    return;
                 }
             }
             else
