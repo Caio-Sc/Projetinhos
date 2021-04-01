@@ -11,7 +11,7 @@ int main()
     char Y;
     while (1)
     {
-        printf("Digite um numero inteiro (Digite 0 para sair): ");
+        printf("Digite um numero inteiro: ");
         scanf("%d", &num);
         if (num % 2 == 0)
         {
