@@ -3,6 +3,7 @@
 //O programa tem como objetivo calcular e indicar ao usuario quantos dias se passaram desde o inicio do ano, levando em conta se ele é bissexto.
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -103,14 +104,14 @@ int main()
                 dia++;
             printf("===============================================\n");
             printf("O ano e bissexto");
-            printf("\nSe passaram %d dias desde o comeco do ano\n", dia);
+            printf("\nVoce esta no dia %d do ano\n", dia);
             printf("===============================================\n");
         }
         else
         {
             printf("===============================================\n");
             printf("O ano nao e bissexto");
-            printf("\nSe passaram %d dias desde o comeco do ano\n", dia);
+            printf("\nVoce esta no dia %d do ano\n", dia);
             printf("===============================================\n");
         }
         while (1) // loop para perguntar se quer calcular novamente
