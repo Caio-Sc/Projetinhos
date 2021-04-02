@@ -114,7 +114,7 @@ int main()
         }
         while (1) // loop para perguntar se quer calcular novamente
         {
-            printf("\nGostaria de calcular novamente?(S/N) ");
+            printf("Gostaria de calcular novamente?(S/N) ");
             scanf(" %c", &Y);
             if (Y == 's' || Y == 'n' || Y == 'S' || Y == 'N')
             {
@@ -130,8 +130,7 @@ int main()
             }
             else
             {
-                printf("Opcao invalida, tente novamente\n");
-                system("pause");
+                printf("\nOpcao invalida, tente novamente\n");
                 continue;
             }
         }

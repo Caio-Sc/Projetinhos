@@ -52,8 +52,7 @@ int main()
             }
             else
             {
-                printf("Opcao invalida, tente novamente\n");
-                system("pause");
+                printf("\nOpcao invalida, tente novamente\n");
                 continue;
             }
         }
