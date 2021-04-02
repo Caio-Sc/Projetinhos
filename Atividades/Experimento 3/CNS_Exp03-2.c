@@ -1,5 +1,5 @@
 //CNS_Exp03-2 - Quantidade de dias desde o início do ano
-//Caio de Nasi Sclavi 25/03
+//Caio de Nasi Sclavi 25/03/2021
 //O programa tem como objetivo calcular e indicar ao usuario quantos dias se passaram desde o inicio do ano, levando em conta se ele é bissexto.
 
 #include <stdio.h>

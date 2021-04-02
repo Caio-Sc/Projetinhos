@@ -1,5 +1,5 @@
 //CNS_Exp03-1.c - Checar Par ou Impar
-//Caio de Nasi Sclavi 25/03
+//Caio de Nasi Sclavi 25/03/2021
 /*Este programa pega o número indicado pelo usuário e checa se o número é par ou ímpar.
  Caso seja par o programa ira ver se a metade do número indicado é par ou ímpar e informar o usuário*/
 
