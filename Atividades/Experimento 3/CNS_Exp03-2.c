@@ -7,7 +7,7 @@
 int main()
 {
     int ano, dmes, dia, mestotal, aux; //Variavel "dmes" utilizada para setar a soma dos dias de todos os meses. // Variavel "aux" utilizada para indicar quantos dias cada mes tem
-    char Y; //usada para recomeçar o loop
+    char Y;                            //usada para recomeçar o loop
     while (1)
     {
         printf("Coloque o ano em que voce esta: ");
@@ -32,14 +32,14 @@ int main()
             system("cls");
             continue;
         }
-        dmes = (mestotal - 1) * 31;//converte os meses em dias
-        switch (mestotal)//Switch utilizado para indicar quantos dias tem cada mes. Também utilizado para diminuir os dias totais de acordo com os meses com menos que 31 dias
+        dmes = (mestotal - 1) * 31; //converte os meses em dias
+        switch (mestotal)           //Switch utilizado para indicar quantos dias tem cada mes. Também utilizado para diminuir os dias totais de acordo com os meses com menos que 31 dias
         {
         case 1:
             aux = 31;
             break;
         case 2:
-            if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0)// checa para ver se o ano é bissexto
+            if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) // checa para ver se o ano é bissexto
                 aux = 29;
             else
                 aux = 28;
@@ -89,7 +89,7 @@ int main()
         if (dia <= 0 || dia > aux) //Bloqueia caso o usuario tenha colocado mais dias que o mês tem
         {
             printf("===============================================\n");
-            printf("Coloque um valor maior que zero e menor que %d\n", aux); 
+            printf("Coloque um valor maior que zero e menor que %d\n", aux);
             printf("===============================================\n");
             system("pause");
             system("cls");
@@ -98,7 +98,7 @@ int main()
         dia = dmes + dia;
         if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) //Checa para ver se o ano é bissexto.
         {
-            if (mestotal > 2) //Checa se o mês colocado pelo usuario é pós fevereiro, para assim adicionar o dia extra do ano bissexto 
+            if (mestotal > 2) //Checa se o mês colocado pelo usuario é pós fevereiro, para assim adicionar o dia extra do ano bissexto
                 dia++;
             printf("===============================================\n");
             printf("O ano e bissexto");
