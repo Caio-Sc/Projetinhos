@@ -102,14 +102,14 @@ int main()
                 dia++;
             printf("===============================================\n");
             printf("O ano e bissexto");
-            printf("\nVoce esta no dia %d do ano\n", dia);
+            printf("\nSe passaram %d dias desde o inicio do ano\n", dia);
             printf("===============================================\n");
         }
         else
         {
             printf("===============================================\n");
             printf("O ano nao e bissexto");
-            printf("\nVoce esta no dia %d do ano\n", dia);
+            printf("\nSe passaram %d dias desde o inicio do ano\n", dia);
             printf("===============================================\n");
         }
         while (1) // loop para perguntar se quer calcular novamente
