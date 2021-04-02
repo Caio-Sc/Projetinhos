@@ -33,9 +33,8 @@ int main()
             system("cls");
             continue;
         }
-        aux = mestotal;
         dmes = (mestotal - 1) * 31;//converte os meses em dias
-        switch (aux)//Switch utilizado para indicar quantos dias tem cada mes. Também utilizado para diminuir os dias totais de acordo com os meses com menos que 31 dias
+        switch (mestotal)//Switch utilizado para indicar quantos dias tem cada mes. Também utilizado para diminuir os dias totais de acordo com os meses com menos que 31 dias
         {
         case 1:
             aux = 31;
