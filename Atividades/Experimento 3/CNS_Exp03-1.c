@@ -13,11 +13,11 @@ int main()
     {
         printf("Digite um numero inteiro: ");
         scanf("%d", &num);
-        if (num % 2 == 0) // Checa se o número indicado é par ou impar
+        if (num % 2 == 0) // Checa se o número indicado é par ou impar através do resto
         {
             printf("======================================\n");
             printf("O Numero digitado e par!\n");
-            if ((num / 2) % 2 == 0)
+            if ((num / 2) % 2 == 0)// Checa se a metade do número indicado é par ou ímpar através do resto
             {
                 printf("A metade de %d (%d) e um numero par\n", num, (num, num / 2));
                 printf("======================================\n");
