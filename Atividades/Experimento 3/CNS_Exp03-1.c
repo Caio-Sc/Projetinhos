@@ -7,13 +7,13 @@
 
 int main()
 {
-    int num;
-    char Y;
+    int num; 
+    char Y; // Usado para parar ou recomeçar o loop
     while (1)
     {
         printf("Digite um numero inteiro: ");
         scanf("%d", &num);
-        if (num % 2 == 0)
+        if (num % 2 == 0) // Checa se o número indicado é par ou impar
         {
             printf("======================================\n");
             printf("O Numero digitado e par!\n");
