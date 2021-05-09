@@ -149,7 +149,7 @@ int main()
                 printf("\nAndar %d: ", i + 1);
                 for (char t = 0; t < 14; t++) //Rotaciona entre cada quarto do andar
                 {
-                    if (tHotel[i][t] != 1)    //Detecta se o quarto esta ocupado
+                    if (tHotel[i][t] != 1)     //Detecta se o quarto esta ocupado
                         printf("  %d", t + 1); //Informa os quartos ocupados do andar sendo verificado
                 }
             }
