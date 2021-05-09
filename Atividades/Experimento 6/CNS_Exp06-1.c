@@ -19,8 +19,8 @@ int main()
         printf("-----------------------------------------------\n"); //Menu para escolher o modulo do programa
         printf("(1) - Fazer check-in\n");
         printf("(2) - Fazer check-out\n");
-        printf("(3) - Mostrar ocupacao de todos os apartamentos\n");
-        printf("(4) - Mostrar ocupacao total do hotel\n");
+        printf("(3) - Mostrar todos os apartamentos livres do hotel\n");
+        printf("(4) - Mostrar a taxa de ocupacao do hotel\n");
         printf("(5) - Sair do Programa\n");
         printf("-----------------------------------------------\n");
         printf("Escolha uma opcao para continuar: ");
@@ -150,7 +150,7 @@ int main()
                 for (char t = 0; t < 14; t++) //Rotaciona entre cada quarto do andar
                 {
                     if (tHotel[i][t] != 1)    //Detecta se o quarto esta ocupado
-                        printf("%d ", t + 1); //Informa os quartos ocupados do andar sendo verificado
+                        printf("  %d", t + 1); //Informa os quartos ocupados do andar sendo verificado
                 }
             }
             printf("\n--------------------------------------------\n");
@@ -167,7 +167,9 @@ int main()
                         taxa++;            //Salva quantidade de quartos ocupados
                 }
             }
+            printf("---------------------------------\n");
             printf("A taxa de ocupacao sera de %.2f%%\n", ((taxa / 280) * 100)); //Informa o usuario a taxa de ocupação
+            printf("---------------------------------\nn");
             system("pause");
             continue;
 
@@ -175,7 +177,9 @@ int main()
             return 0;
 
         default: //Opção caso a opção escolhida seja invalida
+            printf("-----------------------------\n");
             printf("opcao invalida, escolha outra\n");
+            printf("-----------------------------\n");
             system("pause");
             continue;
         }
