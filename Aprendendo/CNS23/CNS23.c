@@ -21,7 +21,7 @@ int main()
         }
         else
         {
-            for (i = 2; i < cont; i++)
+            for (i = 2; i < cont / 2; i++)
             {
                 if (cont % i == 0)
                 {

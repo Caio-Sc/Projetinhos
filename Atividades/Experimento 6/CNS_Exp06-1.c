@@ -5,13 +5,5 @@
 
 int main()
 {
-       float f, c;
-       printf("====================================================\n"
-              "Coloque o valor em Fahrenheit para ser convertido:");
-       scanf("%f", &f);
-       c = ((f - 32) / 1.8); //Faz a conversão de graus Fahrenheit para graus Celsius
-       printf("%f Celsius\n"
-              "====================================================\n",
-              c);
-       system("pause");
+
 }
