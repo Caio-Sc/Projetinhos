@@ -16,7 +16,7 @@ int main()
     while (1)
     {
         //system("cls");
-        printf("-----------------------------------------------\n"); //Menu para escolher o modulo do programa
+        printf("\n\n-----------------------------------------------\n"); //Menu para escolher o modulo do programa
         printf("(1) - Fazer check-in\n");
         printf("(2) - Fazer check-out\n");
         printf("(3) - Mostrar todos os apartamentos livres do hotel\n");
@@ -172,7 +172,7 @@ int main()
             }
             printf("---------------------------------\n");
             printf("A taxa de ocupacao sera de %.2f%%\n", ((taxa / 280) * 100)); //Informa o usuario a taxa de ocupação
-            printf("---------------------------------\nn");
+            printf("---------------------------------\n");
             //system("pause");
             continue;
 
