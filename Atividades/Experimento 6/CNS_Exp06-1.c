@@ -15,7 +15,7 @@ int main()
             tHotel[i][t] = 0;         //Define cada apartamento como desocupado
     while (1)
     {
-        system("cls");
+        //system("cls");
         printf("-----------------------------------------------\n"); //Menu para escolher o modulo do programa
         printf("(1) - Fazer check-in\n");
         printf("(2) - Fazer check-out\n");
@@ -35,7 +35,7 @@ int main()
                 printf("------------------------------\n");
                 printf("Escolha um valor entre 1 e 20!\n");
                 printf("------------------------------\n");
-                system("pause");
+                //system("pause");
                 continue;
             }
             while (1)
@@ -52,7 +52,7 @@ int main()
                     printf("------------------------------------------------------------\n");
                     printf("\nTodos os quartos deste andar estao ocupados, escolha outro\n");
                     printf("------------------------------------------------------------\n");
-                    system("pause");
+                    //system("pause");
                     break;
                 }
                 printf("\nEscolha um dos quartos: ");
@@ -62,7 +62,7 @@ int main()
                     printf("------------------------------\n");
                     printf("Escolha um valor entre 1 e 14!\n");
                     printf("------------------------------\n");
-                    system("pause");
+                    //system("pause");
                     continue;
                 }
                 if (tHotel[escolhaandar - 1][escolhaquarto - 1] != 1) //Verifica se o quarto escolhido esta livre
@@ -71,7 +71,7 @@ int main()
                     printf("-------------------\n");
                     printf("Check-in Concluido!\n");
                     printf("-------------------\n");
-                    system("pause");
+                    //system("pause");
                     break;
                 }
                 else //Informa se o quarto estiver ocupado
@@ -93,7 +93,7 @@ int main()
                 printf("------------------------------\n");
                 printf("Escolha um valor entre 1 e 20!\n");
                 printf("------------------------------\n");
-                system("pause");
+                //system("pause");
                 continue;
             }
             while (1)
@@ -109,7 +109,7 @@ int main()
                     printf("\n----------------------------------------------------------");
                     printf("\nNinguem possui nenhum quarto neste andar, escolha outro!\n");
                     printf("----------------------------------------------------------\n");
-                    system("pause");
+                    //system("pause");
                     break;
                 }
                 printf("\nEscolha um dos quartos para fazer check-out: ");
@@ -119,7 +119,7 @@ int main()
                     printf("--------------------------------\n");
                     printf("Escolha um valor entre 1 e 14!\n");
                     printf("--------------------------------\n");
-                    system("pause");
+                    //system("pause");
                     continue;
                 }
                 if (tHotel[escolhaandar - 1][escolhaquarto - 1] == 1) //Verifica se o quarto escolhido esta ocupado
@@ -128,7 +128,7 @@ int main()
                     printf("--------------------\n");
                     printf("Check-out Concluido!\n");
                     printf("--------------------\n");
-                    system("pause");
+                    //system("pause");
                     break;
                 }
                 else //Informa caso o quarto não esteja ocupado
@@ -146,7 +146,10 @@ int main()
             printf("\n--------------------------------------------");
             for (char i = 0; i < 20; i++) //Rotaciona por cada andar do hotel
             {
-                printf("\nAndar %d: ", i + 1);
+                if (i < 9) //Deixa o print dos quartos paralelo
+                    printf("\nAndar %d:  ", i + 1);
+                else
+                    printf("\nAndar %d: ", i + 1);
                 for (char t = 0; t < 14; t++) //Rotaciona entre cada quarto do andar
                 {
                     if (tHotel[i][t] != 1)     //Detecta se o quarto esta ocupado
@@ -154,7 +157,7 @@ int main()
                 }
             }
             printf("\n--------------------------------------------\n");
-            system("pause");
+            //system("pause");
             continue;
 
         case 4: //Opção que calcula taxa de ocupação do hotel
@@ -170,19 +173,19 @@ int main()
             printf("---------------------------------\n");
             printf("A taxa de ocupacao sera de %.2f%%\n", ((taxa / 280) * 100)); //Informa o usuario a taxa de ocupação
             printf("---------------------------------\nn");
-            system("pause");
+            //system("pause");
             continue;
 
         case 5: //Opção para sair do programa
             return 0;
 
         default: //Opção caso a opção escolhida seja invalida
-            printf("-----------------------------\n");
+            printf("-------------------- ---------\n");
             printf("opcao invalida, escolha outra\n");
             printf("-----------------------------\n");
-            system("pause");
+            //system("pause");
             continue;
         }
     }
-    system("pause");
+    //system("pause");
 }
