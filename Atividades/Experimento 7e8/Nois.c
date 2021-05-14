@@ -674,64 +674,55 @@ int main()
 			fgets(dado, 100, stdin);
 
 			guardaDados[0] = -1; //Reseta a variavel de checagem se houve um resultado.
-			for (int i = 0; i < apartamentosOcupados; i++)
-				switch (selecao)
-				{
-				case '1': //Nome
-					for (int j = 0; j < 280; j++) //Loopa pelos apartamentos.
-						if (apartamentos[j].status != -1) //Checa se o apartamento esta ocupado/reservado.
-							for (int k = 0; k < apartamentos[j].familia.membrosTotal; k++) //Loopa pelos membros da familia naquele apartamento.
-								for (int l = 0; dado[l] != '\0'; l++) //Checa se todos os caracteres do nome batem com o dado inserido pelo usuario.
-									if (apartamentos[j].familia.membros[k].nome[l] == dado[l])
+			for (int i = 0; i < 280; i++) //Loopa pelos apartamentos.
+				if (apartamentos[i].status != -1) //Checa se o apartamento esta ocupado/reservado.
+					for (int j = 0; j < apartamentos[i].familia.membrosTotal; j++) //Loopa pelos membros da familia naquele apartamento.
+						for (int k = 0; dado[k] != '\0'; k++) //Checa se todos os caracteres batem com o dado inserido pelo usuario.
+							switch (selecao)
+							{
+							case '1': //Nome
+									if (apartamentos[i].familia.membros[j].nome[k] == dado[k])
 									{
-										if (dado[l + 1] == '\n') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
+										if (dado[k + 1] == '\n') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
 										{
-											guardaDados[0] = j;
-											guardaDados[1] = k;
+											guardaDados[0] = i;
+											guardaDados[1] = j;
 										}
 									}
 									else
 									{
 										break; //Caso os dados nao batam, vai para o proximo membro.
 									}
-					break;
-				case '2': //CPF
-					for (int j = 0; j < 280; j++) //Loopa pelos apartamentos.
-						if (apartamentos[j].status != -1) //Checa se o apartamento esta ocupado/reservado.
-							for (int k = 0; k < apartamentos[j].familia.membrosTotal; k++) //Loopa pelos membros da familia naquele apartamento.
-								for (int l = 0; dado[l] != '\0'; l++) //Checa se todos os caracteres do cpf batem com o dado inserido pelo usuario.
-									if (apartamentos[j].familia.membros[k].cpf[l] == dado[l])
+								break;
+							case '2': //CPF
+									if (apartamentos[i].familia.membros[j].cpf[k] == dado[k])
 									{
-										if (dado[l + 1] == '\0') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
+										if (dado[k + 1] == '\n') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
 										{
-											guardaDados[0] = j;
-											guardaDados[1] = k;
+											guardaDados[0] = i;
+											guardaDados[1] = j;
 										}
 									}
 									else
 									{
-										break;
+										break; //Caso os dados nao batam, vai para o proximo membro.
 									}
-					break;
-				case '3': //E-mail
-					for (int j = 0; j < 280; j++) //Loopa pelos apartamentos.
-						if (apartamentos[j].status != -1) //Checa se o apartamento esta ocupado/reservado.
-							for (int k = 0; k < apartamentos[j].familia.membrosTotal; k++) //Loopa pelos membros da familia naquele apartamento.
-								for (int l = 0; dado[l] != '\0'; l++) //Checa se todos os caracteres do email batem com o dado inserido pelo usuario.
-									if (apartamentos[j].familia.membros[k].email[l] == dado[l])
+								break;
+							case '3': //E-mail
+									if (apartamentos[i].familia.membros[j].email[k] == dado[k])
 									{
-										if (dado[l + 1] == '\n') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
+										if (dado[k + 1] == '\n') //Caso chegue no final e todos os dados batam, ele salva o caminho ate o membro (Apartamento e numero do membro).
 										{
-											guardaDados[0] = j;
-											guardaDados[1] = k;
+											guardaDados[0] = i;
+											guardaDados[1] = j;
 										}
 									}
 									else
 									{
-										break;
+										break; //Caso os dados nao batam, vai para o proximo membro.
 									}
-					break;
-				}
+								break;
+							}
 
 			if (guardaDados[0] != -1)
 			{
