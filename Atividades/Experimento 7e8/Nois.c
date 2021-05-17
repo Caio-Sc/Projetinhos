@@ -33,7 +33,10 @@ typedef struct apartamento
 int main()
 {
 	tipoApartamento apartamentos[280]; //Matriz dos apartamentos [andar * apartamento].
-	for (int i = 0; i < 280; i++)	   //Deixa todos os apartamentos com valor -1 (Apartamento Livre).
+	
+	int i, j, k; //Variaveis auxiliar para ultilizar nos loops.
+	
+	for (i = 0; i < 280; i++)	   //Deixa todos os apartamentos com valor -1 (Apartamento Livre).
 		apartamentos[i].status = -1;
 
 	int hospedeAtual = 0; //Variavel auxiliar para saber o id do hospede.
@@ -54,9 +57,9 @@ int main()
 
 	while (selecao != '0')
 	{
-		printf("|====================================================================|\n");
+		printf("|========================================================================================|\n");
 
-		printf("\n\t\t\t     -=-=-MENU-=-=-\n"
+		printf("\n\t\t\t\t      -=-=-MENU-=-=-\n"
 			   "1 - Fazer check-in.\n"
 			   "2 - Fazer check-out.\n"
 			   "3 - Fazer reserva.\n"
@@ -79,24 +82,24 @@ int main()
 			//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 		case '0': //Finalizar programa.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=FINALIZANDO SISTEMA=-\n");
+			printf("\n\t\t\t	-=FINALIZANDO SISTEMA=-\n");
 
 			break;
 
 			//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 		case '1': //Check-in.
-			printf("\n|====================================================================|\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n\t\t\t   -=-=-Check-in-=-=-\n");
+			printf("\n\t\t\t\t   -=-=-Check-in-=-=-\n");
 
-			printf("\n\t\t\t     -=APARTAMENTO=-    \n"
-				   "\t\t\t      0 - Voltar       \n\n");
+			printf("\n\t\t\t\t     -=APARTAMENTO=-    \n"
+				   "\t\t\t\t      0 - Voltar       \n\n");
 
 			do
-			{ //Loopa enquanto o apartamento escolhido estiver ocupado, até usuario dititar 0 para voltar ou até quando o usuário digitar que não quer continuar.
+			{ //Loopa enquanto o apartamento escolhido estiver ocupado, atï¿½ usuario dititar 0 para voltar ou atï¿½ quando o usuï¿½rio digitar que nï¿½o quer continuar.
 
 				do
 				{ //Garante que o andar seja valido (entre 1 e 20).
@@ -107,16 +110,18 @@ int main()
 						printf("Andar invalido (Tem de ser de 1 a 20).\n");
 
 				} while ((andar < 1 || andar > 20) && andar != 0);
-
+				
 				if (andar == 0) //Caso o andar seja 0, retornar ao menu.
 					continue;
 
 				do
 				{ //Garante que o apartamento seja valido (entre 1 e 14).
 					printf("Os quartos disponiveis para o andar %d sao: ", andar);
-					for (char i = 0; i < 14; i++)			  //Rotaciona por quarto do andar escolhido para verificar os quartos validos
-						if (apartamentos[(andar - 1) * 14 + i].status == -1) //Checa se o quarto é valido
-							printf("%d ", i + 1);			  //Informa o usuario os quartos validos do andar
+					
+					for (i = 0; i < 14; i++)  //Rotaciona por quarto do andar escolhido para verificar os quartos validos
+						if (apartamentos[(andar - 1) * 14 + i].status == -1) //Checa se o quarto ï¿½ valido
+							printf("%d| ", i + 1);			  //Informa o usuario os quartos validos do andar
+							
 					printf("\nApartamento (1 a 14): ");
 					scanf("%d", &apartamento);
 
@@ -127,16 +132,18 @@ int main()
 
 				if (apartamento == 0) //Caso o apartamento seja 0, retornar ao menu.
 					continue;
+				
+				apAtual = (andar - 1) * 14 + (apartamento - 1); //Pega a posicao do apartamento na lista de 0 a 279.
 
-				if (apartamentos[(andar - 1) * 14 + (apartamento - 1)].status != -1) { //Checa se o apartamento esta ocupado (Diferente de -1).
+				if (apartamentos[apAtual].status != -1) { //Checa se o apartamento esta ocupado (Diferente de -1).
 					printf("\nO APARTAMENTO No.%d ESTA OCUPADO\n"
 						   "Deseja digitar outro apartamento? (s/n)\n",
 						   apartamento + 100 * andar); //Calcula o numero do apartamento (apartamento + 100 * andar).
 					scanf(" %c", &selecao);
 				}
 
-			} while (apartamentos[(andar - 1) * 14 + (apartamento - 1)].status != -1 && andar != 0 && apartamento != 0 && selecao != 'n' && selecao != 'N');
-
+			} while (andar != 0 && apartamento != 0 && selecao != 'n' && selecao != 'N' && apartamentos[apAtual].status != -1);
+			
 			if (andar == 0 || apartamento == 0)
 				continue; //Caso tenha escolhido o comando voltar, retornar ao menu.
 			if (selecao == 'n' || selecao == 'N')
@@ -144,11 +151,9 @@ int main()
 
 			do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer.
 
-			selecao = '\0'; //Limpa a seleção.
-
-			apAtual = (andar - 1) * 14 + (apartamento - 1); //Pega a posicao do apartamento na lista 0 a 279.
+			selecao = '\0'; //Limpa a selecao.
 			
-			printf("\n -=DADOS DO HOSPEDE=-  \n\n");
+			printf("\n\t\t\t\t  -=DADOS DO HOSPEDE=-  \n\n");
 
 			printf("Nome completo: ");
 			fgets(apartamentos[apAtual].familia.membros[0].nome, 100, stdin);
@@ -177,7 +182,7 @@ int main()
 			fgets(apartamentos[apAtual].familia.membros[0].email, 100, stdin);
 			
 			do{ //Loopa enquanto os membros na familia nao forem entre 1 e 10.
-				printf("Quantos membros na familia? (1 a 10) ");
+				printf("Quantos membros na familia? (1 a 10): ");
 				scanf("%d", &membros);
 				
 				if(membros < 1 || membros > 10)
@@ -193,7 +198,7 @@ int main()
 
 			do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer.
 
-			for(int i = 1; i < membros; i++){ //Loopa coletando os dados dos outros membros da familia.
+			for(i = 1; i < membros; i++){ //Loopa coletando os dados dos outros membros da familia.
 				printf("\nNome completo: ");
 				fgets(apartamentos[apAtual].familia.membros[i].nome, 100, stdin);
 
@@ -227,8 +232,8 @@ int main()
 			apartamentos[apAtual].status = 1; // Ocupa o apartamento, colocando-o igual a 1.
 			apartamentosOcupados++;
 
-			printf("\n -=CHECK-IN CONCLUIDO=-\n"
-				   "APARTAMENTO No.%d OCUPADO\n",
+			printf("\n\t\t\t\t  -=CHECK-IN CONCLUIDO=-\n"
+				   "\t\t\t\tAPARTAMENTO No.%d OCUPADO\n",
 				   apartamento + 100 * andar);
 
 			printf("\nPressione ENTER para continuar.");
@@ -239,12 +244,12 @@ int main()
 			//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 		case '2': //Check-out.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-=-=-Check-out-=-=-=-\n");
+			printf("\n\t\t\t\t  -=-=-=-Check-out-=-=-=-\n");
 
-			printf("\n    -=APARTAMENTO=-    \n"
-				   "      0 - Voltar       \n\n");
+			printf("\n\t\t\t\t      -=APARTAMENTO=-    \n"
+				   "\t\t\t\t       0 - Voltar       \n\n");
 
 			do
 			{ //Garante que o andar seja valido (entre 1 e 20).
@@ -262,9 +267,9 @@ int main()
 			do
 			{ //Garante que o apartamento seja valido (entre 1 e 14).
 				printf("Os quartos ocupados no andar %d sao: ", andar);
-				for (char i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
-					if (apartamentos[(andar - 1) * 14 + i].status == 1) //Checa se o quarto é valido
-						printf("%d ", i + 1);							//Informa o usuario os quartos validos do andar
+				for (i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
+					if (apartamentos[(andar - 1) * 14 + i].status == 1) //Checa se o quarto ï¿½ valido
+						printf("%d| ", i + 1);							//Informa o usuario os quartos validos do andar
 				printf("\nApartamento (1 a 14): ");						//Informa o usuario os quartos validos do andar
 				scanf("%d", &apartamento);
 		
@@ -283,8 +288,8 @@ int main()
 
 				apartamentosOcupados--;
 
-				for(int i = 0; i < apartamentos[apAtual].familia.membrosTotal; i++){ //Reseta a familia do quarto quando da check-out.
-					for(int j = 0; j < 100; j++){
+				for(i = 0; i < apartamentos[apAtual].familia.membrosTotal; i++){ //Reseta a familia do quarto quando da check-out.
+					for(j = 0; j < 100; j++){
 						apartamentos[apAtual].familia.membros[i].nome[j] = '\0';
 						apartamentos[apAtual].familia.membros[i].cpf[j] = '\0';
 						apartamentos[apAtual].familia.membros[i].email[j] = '\0';
@@ -294,8 +299,8 @@ int main()
 					apartamentos[apAtual].familia.responsaveis = 0;
 				}
 
-				printf("\n-=CHECK-OUT CONCLUIDO=-\n"
-					   "APARTAMENTO No.%d LIVRE\n",
+				printf("\n\t\t\t\t  -=CHECK-OUT CONCLUIDO=-\n"
+					   "\t\t\t\t APARTAMENTO No.%d LIVRE\n",
 					   apartamento + 100 * andar);
 			}
 			else
@@ -313,15 +318,15 @@ int main()
 		//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		
 		case '3': //Fazer reservas.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-=-FAZER RESERVA-=-=-\n");
+			printf("\n\t\t\t\t-=-=-FAZER RESERVA-=-=-\n");
 
-			printf("\n    -=APARTAMENTO=-    \n"
-				   "      0 - Voltar       \n\n");
+			printf("\n\t\t\t\t    -=APARTAMENTO=-    \n"
+				   "\t\t\t\t      0 - Voltar       \n\n");
 
 			do
-			{ //Loopa enquanto o apartamento escolhido estiver ocupado, até usuario dititar 0 para voltar ou até quando o usuário digitar que não quer continuar.
+			{ //Loopa enquanto o apartamento escolhido estiver ocupado, atï¿½ usuario dititar 0 para voltar ou atï¿½ quando o usuï¿½rio digitar que nï¿½o quer continuar.
 
 				do
 				{ //Garante que o andar seja valido (entre 1 e 20).
@@ -339,9 +344,9 @@ int main()
 				do
 				{ //Garante que o apartamento seja valido (entre 1 e 14).
 					printf("Os quartos disponiveis para o andar %d sao: ", andar);
-					for (char i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
-						if (apartamentos[(andar - 1) * 14 + i].status == -1) //Checa se o quarto é valido
-							printf("%d ", i + 1);							//Informa o usuario os quartos validos do andar
+					for (i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
+						if (apartamentos[(andar - 1) * 14 + i].status == -1) //Checa se o quarto ï¿½ valido
+							printf("%d| ", i + 1);							//Informa o usuario os quartos validos do andar
 					printf("\nApartamento (1 a 14): ");
 					scanf("%d", &apartamento);
 
@@ -353,14 +358,16 @@ int main()
 				if (apartamento == 0) //Caso o apartamento seja 0, retornar ao menu.
 					continue;
 
-				if (apartamentos[(andar - 1) * 14 + (apartamento - 1)].status != -1) { //Checa se o apartamento esta ocupado (Diferente de -1).
+				apAtual = (andar - 1) * 14 + (apartamento - 1); //Pega a posicao do apartamento na lista 0 a 279.
+				
+				if (apartamentos[apAtual].status != -1) { //Checa se o apartamento esta ocupado (Diferente de -1).
 					printf("\nO APARTAMENTO No.%d ESTA OCUPADO\n"
 						   "Deseja digitar outro apartamento? (s/n)\n",
 						   apartamento + 100 * andar); //Calcula o numero do apartamento (apartamento + 100 * andar).
 					scanf(" %c", &selecao);
 				}
 
-			} while (apartamentos[(andar - 1) * 14 + (apartamento - 1)].status != -1 && andar != 0 && apartamento != 0 && selecao != 'n' && selecao != 'N');
+			} while (andar != 0 && apartamento != 0 && selecao != 'n' && selecao != 'N' && apartamentos[apAtual].status != -1);
 
 			if (andar == 0 || apartamento == 0)
 				continue; //Caso tenha escolhido o comando voltar, retornar ao menu.
@@ -369,11 +376,11 @@ int main()
 
 			do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer.
 
-			selecao = '\0'; //Limpa a seleção.
+			selecao = '\0'; //Limpa a seleï¿½ï¿½o.
 
 			apAtual = (andar - 1) * 14 + (apartamento - 1); //Pega a posicao do apartamento na lista 0 a 279.
 			
-			printf("\n -=DADOS DO HOSPEDE=-  \n\n");
+			printf("\n\t\t\t\t  -=DADOS DO HOSPEDE=-  \n\n");
 
 			printf("Nome completo: ");
 			fgets(apartamentos[apAtual].familia.membros[0].nome, 100, stdin);
@@ -403,7 +410,7 @@ int main()
 
 			membros = 0;
 			do{ //Loopa enquanto os membros na familia nao forem entre 1 e 10.
-				printf("Quantos membros na familia? (1 a 10) ");
+				printf("Quantos membros na familia? (1 a 10): ");
 				scanf("%d", &membros);
 				
 				if(membros < 1 || membros > 10)
@@ -417,8 +424,8 @@ int main()
 
 			apartamentosReservados++;
 
-			printf("\n -=RESERVA CONCLUIDA=- \n"
-				   "APARTAMENTO No.%d RESERVADO\n",
+			printf("\n\t\t\t\t  -=RESERVA CONCLUIDA=- \n"
+				   "\t\t\t       APARTAMENTO No.%d RESERVADO\n",
 				   apartamento + 100 * andar);
 
 			do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
@@ -431,12 +438,12 @@ int main()
 		//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		
 		case '4': //Desfazer reservas.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-DESFAZER RESERVAS-=-\n");
+			printf("\n\t\t\t	-=-DESFAZER RESERVAS-=-\n");
 
-			printf("\n    -=APARTAMENTO=-    \n"
-				   "      0 - Voltar       \n\n");
+			printf("\n\t\t\t\t    -=APARTAMENTO=-    \n"
+				   "\t\t\t\t      0 - Voltar       \n\n");
 
 			do
 			{ //Garante que o andar seja valido (entre 1 e 20).
@@ -454,9 +461,9 @@ int main()
 			do
 			{ //Garante que o apartamento seja valido (entre 1 e 14).
 				printf("Os quartos ocupados no andar %d sao: ", andar);
-				for (char i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
-					if (apartamentos[(andar - 1) * 14 + i].status != -1) //Checa se o quarto é valido
-						printf("%d ", i + 1);							//Informa o usuario os quartos validos do andar
+				for (i = 0; i < 14; i++)							//Rotaciona por quarto do andar escolhido para verificar os quartos validos
+					if (apartamentos[(andar - 1) * 14 + i].status != -1) //Checa se o quarto ï¿½ valido
+						printf("%d| ", i + 1);							//Informa o usuario os quartos validos do andar
 				printf("\nApartamento (1 a 14): ");
 				scanf("%d", &apartamento);
 
@@ -467,14 +474,16 @@ int main()
 
 			if (apartamento == 0) //Caso o apartamento seja 0, retornar ao menu.
 				continue;
-
-			if (apartamentos[(andar - 1) * 14 + (apartamento - 1)].status != -1){ //Checa se o apartamento esta ocupado/reservado (Diferente de -1).
-				apartamentos[(andar - 1) * 14 + (apartamento - 1)].status = -1; //Deixa o apartamento livre (Igual a -1).
+			
+			apAtual = (andar - 1) * 14 + (apartamento - 1); //Pega a posicao do apartamento na lista 0 a 279.
+			
+			if (apartamentos[apAtual].status != -1){ //Checa se o apartamento esta ocupado/reservado (Diferente de -1).
+				apartamentos[apAtual].status = -1; //Deixa o apartamento livre (Igual a -1).
 
 				apartamentosReservados--;
 
-				printf("\n-=RESERVA DESFEITA=-\n"
-					   "APARTAMENTO No.%d LIVRE\n",
+				printf("\n\t\t\t\t  -=RESERVA DESFEITA=-\n"
+					   "\t\t\t        APARTAMENTO No.%d LIVRE\n",
 					   apartamento + 100 * andar);
 			}
 			else
@@ -491,11 +500,11 @@ int main()
 		//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		
 		case '5': //Checar reservas.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-=-=-RESERVAS=-=-=-=-\n\n");
+			printf("\n\t\t\t\t -=-=-=-RESERVAS=-=-=-=-\n\n");
 
-			for(int i = 0; i < 280; i++)
+			for(i = 0; i < 280; i++)
 				if(apartamentos[i].status == 0)
 					printf("Andar: %d\n"
 						   "Apartamento: %d\n"
@@ -509,9 +518,9 @@ int main()
 		//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 		
 		case '6': //Mostrar apartamentos.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-=-APARTAMENTOS=-=-=-\n\n"
+			printf("\n\t\t\t\t -=-=-APARTAMENTOS=-=-=-\n\n"
 				   "R - Reservado\n\n"
 				   "O - Ocupado\n\n");
 
@@ -520,18 +529,18 @@ int main()
 			printf("Reservados - %d\n\n", apartamentosReservados);
 
 			printf("    ");
-			for(int i = 0; i < 14; i++) //Adiciona os numeros dos apartamentos na parte de cima da matriz.
+			for(i = 0; i < 14; i++) //Adiciona os numeros dos apartamentos na parte de cima da matriz.
 				if(i >= 9)
 					printf("%d  ", i + 1);
 				else
 					printf(" %d  ", i + 1);
 
 			printf("\n");
-			for (int i = 19; i >= 0; i--)
+			for (i = 19; i >= 0; i--)
 			{ //Adiciona os numeros dos andares (de cima para baixo).
 				printf("%2d |", i + 1);
 
-				for (int j = 0; j < 14; j++)
+				for (j = 0; j < 14; j++)
 				{ //Adiciona os apartamentos (Livre - ' ' | Ocupado - 'X').
 					if (apartamentos[i * 14 + j].status == 0)
 						printf(" R |");
@@ -552,10 +561,10 @@ int main()
 
 		case '7': //Dados apartamento (Especifico).
 
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-=-=APARTAMENTO=-=-=-\n"
-				   "      0 - Voltar       \n\n");
+			printf("\n\t\t\t\t -=-=-=APARTAMENTO=-=-=-\n"
+				   "\t\t\t\t       0 - Voltar       \n\n");
 
 			do
 			{ //Garante que o andar seja valido (entre 1 e 20).
@@ -589,7 +598,7 @@ int main()
 			{												  //Checa se o apartamento esta ocupado (Diferente de -1).
 				h = 0;//apartamentos[andar - 1][apartamento - 1]; //Pega o id do hospede, a partir da matriz dos apartamentos.
 				printf("\nNo.Apartamento: %d\n"
-					   "\n      -=FAMILIA=-      \n"
+					   "\n\t\t\t\t       -=FAMILIA=-      \n"
 					   "Membros: %d\n"
 					   "Dependentes: %d\n"
 					   "Responsaveis: %d\n\n",
@@ -598,25 +607,25 @@ int main()
 				scanf(" %c", &selecao);
 				if (selecao == 's' || selecao == 'S')
 				{
-					for (int i = 0; i < apartamentos[apAtual].familia.membrosTotal; i++)
+					for (i = 0; i < apartamentos[apAtual].familia.membrosTotal; i++)
 					{
 						printf("\nNome: %s", apartamentos[apAtual].familia.membros[i].nome);
 						printf("Idade: %d\n", apartamentos[apAtual].familia.membros[i].idade);
 
-						if(apartamentos[apAtual].familia.membros[i].idade >= 18) //Checa se é menor de idade.
+						if(apartamentos[apAtual].familia.membros[i].idade >= 18) //Checa se ï¿½ menor de idade.
 							printf("CPF: %s", apartamentos[apAtual].familia.membros[i].cpf);
 
 						printf("Apartamento: %d\n", apartamentos[apAtual].familia.membros[i].apartamento);
 
-						if(apartamentos[apAtual].familia.membros[i].idade >= 18) //Checa se é menor de idade.
+						if(apartamentos[apAtual].familia.membros[i].idade >= 18) //Checa se ï¿½ menor de idade.
 							printf("Email: %s\n", apartamentos[apAtual].familia.membros[i].email);
 					}
 				}
 			}
 			else
 			{
-				printf("\nNo.Apartamento: %d\n\n"
-					   "ESTE APARTAMENTO ESTA LIVRE. \n",
+				printf("\n\t\t\t\t    No.Apartamento: %d\n\n"
+					   "\t\t\t\tESTE APARTAMENTO ESTA LIVRE. \n",
 					   apartamento + 100 * andar);
 			}
 
@@ -630,10 +639,10 @@ int main()
 			//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 		case '8': //Taxa de ocupacao.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
 
-			printf("\n-=-DADOS DE OCUPACAO-=-\n"
-				   "\n   -=Apartamentos=-    \n"
+			printf("\n\t\t\t\t-=-DADOS DE OCUPACAO-=-\n"
+				   "\n\t\t\t\t   -=Apartamentos=-    \n"
 				   "Livres   - %d\n"
 				   "Ocupados - %d\n"
 				   "Reservados - %d\n"
@@ -648,9 +657,10 @@ int main()
 			//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 		case '9': //Procurar por um hospede.
-			printf("\n-=-=-=-=-=-=-=-=-=-=-=-\n");
+			printf("\n|========================================================================================|\n");
+			printf("\n\t\t\t\t  -=-Busca de Hospede-=-\n");
 
-			printf("Por qual dado voce deseja procurar pelo hospede?\n\n"
+			printf("\nPor qual dado voce deseja procurar pelo hospede?\n\n"
 				   "1 - Nome\n"
 				   "2 - CPF\n"
 				   "3 - E-mail\n"
@@ -658,26 +668,28 @@ int main()
 				   "-> ");
 
 			do
-			{ //Loopa enquanto o usuário não escolher uma das opções.
+			{ //Loopa enquanto o usuï¿½rio nï¿½o escolher uma das opï¿½ï¿½es.
 				scanf(" %c", &selecao);
 			} while (selecao != '1' && selecao != '2' && selecao != '3' && selecao != '0');
 
-			if(selecao == '0') //Volta ao menu caso o usuario escolha voltar.
+			if(selecao == '0'){ //Volta ao menu caso o usuario escolha voltar.
+				selecao = '\0'; //Limpa a selecao.
 				continue;
+			}
 
 			do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
 
-			for (int i = 0; dado[i] != '\0'; i++) //Limpa a variavel "dado".
+			for (i = 0; dado[i] != '\0'; i++) //Limpa a variavel "dado".
 				dado[i] = '\0';
 
 			printf("\nDigite aqui o dado: ");
 			fgets(dado, 100, stdin);
 
 			guardaDados[0] = -1; //Reseta a variavel de checagem se houve um resultado.
-			for (int i = 0; i < 280; i++) //Loopa pelos apartamentos.
+			for (i = 0; i < 280; i++) //Loopa pelos apartamentos.
 				if (apartamentos[i].status != -1) //Checa se o apartamento esta ocupado/reservado.
-					for (int j = 0; j < apartamentos[i].familia.membrosTotal; j++) //Loopa pelos membros da familia naquele apartamento.
-						for (int k = 0; dado[k] != '\0'; k++) //Checa se todos os caracteres batem com o dado inserido pelo usuario.
+					for (j = 0; j < apartamentos[i].familia.membrosTotal; j++) //Loopa pelos membros da familia naquele apartamento.
+						for (k = 0; dado[k] != '\0'; k++) //Checa se todos os caracteres batem com o dado inserido pelo usuario.
 							switch (selecao)
 							{
 							case '1': //Nome
@@ -726,7 +738,7 @@ int main()
 
 			if (guardaDados[0] != -1)
 			{
-				printf("\n      -=HOSPEDE=-      \n");
+				printf("\n\t\t\t\t       -=HOSPEDE=-\n");
 				printf("1 - Nome: %s", apartamentos[guardaDados[0]].familia.membros[guardaDados[1]].nome);
 				printf("2 - Idade: %d\n", apartamentos[guardaDados[0]].familia.membros[guardaDados[1]].idade);
 
@@ -773,7 +785,7 @@ int main()
 							printf("CPF alterado com sucesso!");
 							break;
 						case '4': //Apartamento
-							printf("\n  -=NOVO APARTAMENTO=- \n\n");
+							printf("\n\t\t\t\t  -=NOVO APARTAMENTO=- \n\n");
 							do { //Garante que o andar seja valido (entre 1 e 20).
 								printf("Andar (1 a 20): ");
 								scanf("%d", &andar);
@@ -801,7 +813,7 @@ int main()
 							
 							do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
 
-							guardaDados[2] = (andar - 1) * 14 + (apartamento - 1);
+							guardaDados[2] = (andar - 1) * 14 + (apartamento - 1); //Guarda a posicao do apartamento atual na lista 0 a 279.
 
 							if (apartamentos[guardaDados[2]].status != -1) //Checa se o apartamento esta ocupado (Diferente de -1).
 							{
@@ -810,7 +822,7 @@ int main()
 								printf("Pressione ENTER para continuar");
 								getchar(); //Pausa o console, esperando por uma tecla do usuario.
 
-								guardaDados[3] = 0; //Sair do loop.
+								guardaDados[3] = 1; //Sair do loop.
 							}
 							else
 							{
@@ -820,7 +832,7 @@ int main()
 								if(selecao == 'S' || selecao == 's'){
 									apartamentos[guardaDados[2]].status = 1; //Ocupa o novo apartamento.
 
-									for(int i = 0; i < apartamentos[guardaDados[0]].familia.membrosTotal; i++) //Roda pelos membros da familia, colocando o seu novo apartamento.
+									for(i = 0; i < apartamentos[guardaDados[0]].familia.membrosTotal; i++) //Roda pelos membros da familia, colocando o seu novo apartamento.
 										apartamentos[guardaDados[0]].familia.membros[i].apartamento = apartamento + 100 * andar;
 
 									apartamentos[guardaDados[2]].familia = apartamentos[guardaDados[0]].familia; //Atualiza a familia do novo apartamento.
@@ -848,7 +860,7 @@ int main()
 							break;
 						}
 					}
-				} while(guardaDados[3] == 0 && selecao != 'N' && selecao != 'n');
+				} while(guardaDados[3] != 0 && selecao != 'N' && selecao != 'n');
 				
 				do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
 
