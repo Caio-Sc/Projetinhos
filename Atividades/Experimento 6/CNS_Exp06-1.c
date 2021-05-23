@@ -2,13 +2,12 @@
 //Caio de Nasi Sclavi 09/05/2021
 /*Este programa funciona como um sistema de hotel, podendo fazer check-in, check-out, apresentar os quartos vazios e a taxa de ocupação total do hotel*/
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
     char tHotel[20][14];                    //Usado para fazer check-in e check-out de cada quarto do hotel
     int escolhaandar, escolhaquarto, opcao; //Usadas para escolhas dos quartos, andares e da opção do menu
-    float taxa = 0;                         //Usado para contar quantos quartos estão ocupados
+    float taxa;                         //Usado para contar quantos quartos estão ocupados
 
     for (char i = 0; i < 20; i++)
         for (char t = 0; t < 14; t++) //loop usado para definir todos os valores de cada quarto como 0 (desocupado)

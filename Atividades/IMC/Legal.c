@@ -2,6 +2,7 @@
 // Caio De Nasi Sclavi 18/03/2021
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
 
 int main()
 {

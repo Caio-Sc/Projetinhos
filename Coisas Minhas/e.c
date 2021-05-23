@@ -1,11 +1,16 @@
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-err34-c"
+#pragma ide diagnostic ignored "cert-msc50-cpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
 #include <string.h>
+#include <process.h>
+
 int main()
 {
     char j[100];
-    int i, r, c;
+    int i, r, c = 0;
     printf("Escreva a Senha: ");
     fgets(j, 100, stdin);
     struct timeval t1;

@@ -25,11 +25,8 @@ typedef struct familia
 typedef struct apartamento
 {
 	int status; //-1 - Desocupado, 0 - Reservado, 1 - Ocupado.
-	int andar;
-	int apartamento;
 	tipoFamilia familia;
 } tipoApartamento;
-
 int main()
 {
 	tipoApartamento apartamentos[280]; //Matriz dos apartamentos [andar * apartamento].
@@ -38,17 +35,13 @@ int main()
 	
 	for (i = 0; i < 280; i++)	   //Deixa todos os apartamentos com valor -1 (Apartamento Livre).
 		apartamentos[i].status = -1;
-
-	int hospedeAtual = 0; //Variavel auxiliar para saber o id do hospede.
-	int familiaAtual = 0;
-
-	char selecao;					  //Variavel auxiliar para saber a escolha do usuario dentro do menu.
+	char selecao = 0;					  //Variavel auxiliar para saber a escolha do usuario dentro do menu.
 	int andar = -1, apartamento = -1; //Variaveis auxilixar para saber o andar e o apartamento escolhidos pelo usuario.
 	int apartamentosOcupados = 0, apartamentosReservados = 0;	  //Numero de apartamentos ocupados, numero de apartamentos reservados.
 
 	int ch; //Variavel auxiliar para limpar buffer.
 
-	int h, membros, apAtual; //Variaveris auxiliar
+    int membros, apAtual; //Variaveris auxiliar
 
 	char dado[100]; //Variavel auxiliar para receber o dado para pesquisa do hospede.
 	int guardaDados[4]; //Variavel auxiliar para ajudar na pesquisa e alteracao de dados do hospede.
@@ -71,7 +64,6 @@ int main()
 			   "9 - Procurar por um hospede / Alterar dados\n"
 			   "0 - Sair/Voltar.\n\n"
 			   "Selecao: ");
-
 		scanf(" %c", &selecao);
 
 		do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
@@ -596,7 +588,7 @@ int main()
 
 			if (apartamentos[apAtual].status != -1)
 			{												  //Checa se o apartamento esta ocupado (Diferente de -1).
-				h = 0;//apartamentos[andar - 1][apartamento - 1]; //Pega o id do hospede, a partir da matriz dos apartamentos.
+                //apartamentos[andar - 1][apartamento - 1]; //Pega o id do hospede, a partir da matriz dos apartamentos.
 				printf("\nNo.Apartamento: %d\n"
 					   "\n\t\t\t\t       -=FAMILIA=-      \n"
 					   "Membros: %d\n"
@@ -690,7 +682,7 @@ int main()
 				if (apartamentos[i].status != -1) //Checa se o apartamento esta ocupado/reservado.
 					for (j = 0; j < apartamentos[i].familia.membrosTotal; j++) //Loopa pelos membros da familia naquele apartamento.
 						for (k = 0; dado[k] != '\0'; k++) //Checa se todos os caracteres batem com o dado inserido pelo usuario.
-							switch (selecao)
+							switch (selecao) // NOLINT(hicpp-multiway-paths-covered)
 							{
 							case '1': //Nome
 									if (apartamentos[i].familia.membros[j].nome[k] == dado[k])
@@ -771,7 +763,7 @@ int main()
 
 						case '2': //Idade.
 							printf("Coloque a nova idade: ");
-							scanf("%d", apartamentos[guardaDados[0]].familia.membros[guardaDados[1]].idade);
+							scanf("%d", &apartamentos[guardaDados[0]].familia.membros[guardaDados[1]].idade);
 
 							do { ch = fgetc(stdin); } while (ch != EOF && ch != '\n'); //Limpar buffer
 
@@ -881,7 +873,6 @@ int main()
 
 		default: //Voltar
 			continue;
-			break;
 		}
 	}
 }

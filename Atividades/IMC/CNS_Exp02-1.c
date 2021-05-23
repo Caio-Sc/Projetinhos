@@ -1,10 +1,11 @@
 // CNS_Exp02 - 1 // Calculo de IMC
 // Caio De Nasi Sclavi 18/03/2021
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
-{ 
-    float peso, altura, IMC, pfalta;
+{
+    float peso, altura, IMC;
     printf("Escreva sua altura em metros ou centimetros (usar . para metros): ");
     scanf("%f", &altura);
     printf("Escreva seu peso em Kg: ");
