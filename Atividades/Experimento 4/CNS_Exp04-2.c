@@ -3,7 +3,6 @@
 /*Este programa obtem um cpf inserido pelo usuario, identificando e informando ao usuario se o cpf é valido ou não*/
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main()
 {
@@ -12,7 +11,7 @@ int main()
     int soma[3];  //Variavel usada para armazenar soma do numero de controle
     int k;        //Utilizado para transferir valor da variavel "cpf" para a variavel "d"
     printf("digite o cpf na forma XXXXXXXXX-XX: ");
-    scanf("%s", &cpf);
+    scanf("%s", cpf);
     cpf[9] = '-';
     for (k = 0; k < 11; k++) //transferir valor da variavel "cpf" para a variavel "d"
     {

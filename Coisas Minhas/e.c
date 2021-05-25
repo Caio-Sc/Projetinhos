@@ -1,6 +1,3 @@
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "cert-err34-c"
-#pragma ide diagnostic ignored "cert-msc50-cpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>

@@ -20,6 +20,6 @@ int main()
     ns[i] = ' ';
     for (i = 0; i < strlen(snome) - 1; i++)
         ns[t++] = snome[i];
-    ns[t++] = '\0';
+    ns[t] = '\0';
     printf("Nome inteiro: %s", ns);
 }

@@ -9,6 +9,7 @@ int main()
     int escolhaandar, escolhaquarto, opcao; //Usadas para escolhas dos quartos, andares e da opção do menu
     float taxa;                         //Usado para contar quantos quartos estão ocupados
 
+
     for (char i = 0; i < 20; i++)
         for (char t = 0; t < 14; t++) //loop usado para definir todos os valores de cada quarto como 0 (desocupado)
             tHotel[i][t] = 0;         //Define cada apartamento como desocupado

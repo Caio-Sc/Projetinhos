@@ -1,6 +1,7 @@
 //CNS12 - Calculadora aritmética
 //Caio Sclavi 25/03/2021
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {

@@ -11,7 +11,7 @@ int main()
     do
     {
         printf("Escolha a quantidade de colunas (maximo 10): ");
-        scanf("%d", &qColunas); //Pega a quantidade maxima de colunas
+        scanf("%s", &qColunas); //Pega a quantidade maxima de colunas
     } while ((qColunas > 10 || qColunas < 1));
     for (lV = 0; lV < qColunas; lV++) //loop para pegar valores de cada coluna
     {

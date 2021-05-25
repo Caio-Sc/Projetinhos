@@ -4,6 +4,7 @@
  Caso seja par o programa ira ver se a metade do número indicado é par ou ímpar e informar o usuário*/
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -19,12 +20,12 @@ int main()
             printf("O Numero digitado e par!\n");
             if ((num / 2) % 2 == 0)// Checa se a metade do número indicado é par ou ímpar através do resto
             {
-                printf("A metade de %d (%d) e um numero par\n", num, (num, num / 2));
+                printf("A metade de %d (%d) e um numero par\n", num, (num / 2));
                 printf("======================================\n");
             }
             else
             {
-                printf("A metade de %d (%d) e um numero impar\n", num, (num, num / 2));
+                printf("A metade de %d (%d) e um numero impar\n", num, (num / 2));
                 printf("======================================\n");
             }
         }
@@ -57,5 +58,4 @@ int main()
             }
         }
     }
-    return 0;
 }

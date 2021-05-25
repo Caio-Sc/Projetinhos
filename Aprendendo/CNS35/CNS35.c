@@ -6,7 +6,7 @@ int main()
 {
     int M[10][10];
     int D; //Dimensão matriz
-    int i, j, D1, D2;
+    int i, j;
     printf("Digite a dimensão da matriz: ");
     scanf("%d", &D);
     if (D < 1 || D > 10)
@@ -24,6 +24,6 @@ int main()
         {
             printf("%d\t", M[i][j]);
         }
-                printf("\n");
+                printf("\n"); 
     }
 }

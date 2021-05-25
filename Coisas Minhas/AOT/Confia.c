@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <locale.h>
+#include <math.h>
+#include <stdlib.h>
 
-void main()
+int main()
 {
     char Y;
     setlocale(LC_ALL, "Portuguese");
@@ -55,7 +57,7 @@ void main()
                 }
                 else if (Y == 'n' || Y == 'N')
                 {
-                    return;
+                    return 0;
                 }
             }
             else

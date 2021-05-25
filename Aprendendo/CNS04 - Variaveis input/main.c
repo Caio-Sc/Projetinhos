@@ -2,7 +2,7 @@
 //Caio Sclavi 11/03/21
 //
 #include <stdio.h>
-
+#include <stdlib.h>
 int main()
 {
     float n1, n2, media;

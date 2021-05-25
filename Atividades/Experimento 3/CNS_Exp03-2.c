@@ -3,6 +3,7 @@
 //O programa tem como objetivo calcular e indicar ao usuario quantos dias se passaram desde o inicio do ano, levando em conta se ele é bissexto.
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
